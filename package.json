@@ -1,0 +1,26 @@
+{
+  "name": "crmgraphql",
+  "version": "1.0.0",
+  "description": "crm de graphql",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gonzalezenios/My_app.git"
+  },
+  "author": "Enio Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gonzalezenios/My_app/issues"
+  },
+  "homepage": "https://github.com/Gonzalezenios/My_app#readme",
+  "dependencies": {
+    "apollo-server": "^2.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

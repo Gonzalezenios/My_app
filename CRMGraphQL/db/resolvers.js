@@ -18,8 +18,10 @@ const crearToken = (usuario, secreta, expiresIn) => {
 // Resolvers
 const resolvers = {
     Query: {
-        obtenerUsuario: async (_, {}, ctx) => {
-            return ctx.usuario;
+        obtenerUsuario: async (_, { token }) => {
+            const usuarioId = await jwt.verify(token, process.env.SECRETA)
+
+            return usuarioId;
         }, 
         obtenerProductos: async () => {
             try {
@@ -250,11 +252,9 @@ const resolvers = {
         },
         nuevoCliente: async (_, { input }, ctx) => {
 
-            console.log(ctx);
-
             const { email } = input
             // Verificar si el cliente ya esta registrado
-            // console.log(input);
+            
 
             const cliente = await Cliente.findOne({ email });
             if(cliente) {
